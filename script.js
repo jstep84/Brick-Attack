@@ -81,31 +81,33 @@ function keyUpHandler(e) {
 }   
 
 // create the ball
-function drawBall() {
+function drawBall(clr) {
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = clr;
     ctx.fill();
     ctx.closePath();
 }
 
 /*function colorChange() {
-    if (Math.random >= .66) {
-        ctx.fillStyle = "red";
+    var randNum = Math.random();
+    console.log(randNum)
+    if (randNum >= .66) {
+         drawBall("red");
     }
-    else if (Math.random <= .33) {
-        drawball().fillStyle = "green";
+    else if (randNum <= .33) {
+        drawBall("green");
     }
     else {
-        drawball().fillStyle = "#0095DD";
+        drawBall("#blue");
     }
-} */ 
+} */
 
 // draw paddle on gameboard
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height-paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "blue";
     ctx.fill();
     ctx.closePath();
 }
@@ -121,7 +123,7 @@ function drawBricks() {
                 bricks[i][j].y = brickY;
                 ctx.beginPath();
                 ctx.rect(brickX, brickY, brickWidth, brickHeight);
-                ctx.fillStyle = "#0095DD";
+                ctx.fillStyle = "blue";
                 ctx.fill();
                 ctx.closePath();
             }
@@ -131,9 +133,6 @@ function drawBricks() {
 
 // frame animation for the game
 function draw() {
-    var player = 1;
-    var player1 = 0;
-    var player2 = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawScore();
     drawBricks();
@@ -182,8 +181,7 @@ function collisionDetection() {
                     b.status = 0;
                     score1++;
                     if (score1 == brickRowCount * brickColumnCount) {
-                        alert("You win the round with " + score1 + " points!");
-                        document.location.reload();
+                        alert("You win the round with " + score1 + " points!")
                     }
                 }
             }
@@ -193,19 +191,16 @@ function collisionDetection() {
 
 function drawScore() {
     ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "blue";
     ctx.fillText("Player 1: " + score1, 8, 20);
     ctx.fillText("Player 2: " + score2, 400, 20);
 }
 
-function twoPlayer() {
-    var player = 1;
-    var player1 = 0;
-    var player2 = 0;
-    setInterval(draw, 3);
-}
+var player = 1;
+var player1 = 0;
+var player2 = 0;
 
-twoPlayer()
+setInterval(draw, 15);
 
 
 
