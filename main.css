@@ -39,6 +39,7 @@ button {
 #score {
 	border: 2x solid white;
 	border-radius: 5px;
+	margin-left: 280px;
 }
 
 h3 {
