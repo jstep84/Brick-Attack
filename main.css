@@ -1,10 +1,47 @@
 * {
 	padding: 0;
 	margin: 0;
+	text-align: center;
+	margin-top: 20px;
+	font-family: helvetica;
+	background-color: #4B966E;
+	color: white;
 }
 
 canvas {
 	background: #eee;
 	display: block;
 	margin: 0 auto;
+}
+
+h1 {
+	font-size: 75px;
+	margin-right: 140px;
+	margin-bottom: 20px;
+}
+
+button {
+	width: 150px;
+	color: white;
+	background-color: #4B966E;
+	border: 2px solid white; 
+	border-radius: 10px;
+	margin: 5px;
+	font-size:20px;
+	margin-bottom: 20px;
+}
+
+#arena{
+	border-radius: 10px;
+	background-color: #75B291;
+}
+
+#score {
+	border: 2x solid white;
+	border-radius: 5px;
+}
+
+h3 {
+	font-size: 25px;
+	margin-bottom: 20px;
 }
