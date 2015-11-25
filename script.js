@@ -2,6 +2,10 @@
 // just in case!
 console.log("The script link works!");
 
+// thanks to https://developer.mozilla.org/en-US/docs/Games/Workflows/2D_Breakout_game_pure_JavaScript
+// for the brilliant tutorial
+
+
 // create the game board
 var canvas = document.getElementById("arena");
 var ctx = canvas.getContext("2d");
@@ -157,6 +161,7 @@ function draw() {
             }
             else {
             document.location.reload();
+            alert("Too bad! try again.")
         }
     }
 
@@ -169,15 +174,18 @@ function draw() {
     }
 }
 
+// click event easy play
     function ePlay(){
         setInterval(draw, 8);
         menuScreen();
     }
     
+// click event medium play 
     function mPlay(){
         setInterval(draw, 6);
     }
     
+// click event hard play     
     function hPlay(){
         setInterval(draw, 4);
     }
