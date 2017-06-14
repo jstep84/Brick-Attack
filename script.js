@@ -162,7 +162,7 @@ function draw() {
             }
             else {
             document.location.reload();
-            // alert("Too bad! try again.")
+            alert("Too bad! try again.")
         }
     }
 
