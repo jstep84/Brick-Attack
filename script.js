@@ -79,22 +79,23 @@ function keyUpHandler(e) {
 // detect brick collision, reverse trajectory, remove brick status, check for all bricks gone and alert winner
 function collisionDetection() {
   for (i = 0; i < brickColumnCount; i++) {
-    for (j = 0; j < brickRowCount; j++) {
-      var b = bricks[i][j];
-      if (b.status === 1) {
-        if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
-          dy = -dy;
-          b.status = 0;
-            score++;
-          }
-          if (score == brickRowCount * brickColumnCount) {
-            alert("You win the round with " + score + " points! \n Go again.");
-            document.location.reload();
-          }
-        }
+  for (j = 0; j < brickRowCount; j++) {
+    var b = bricks[i][j];
+    if (b.status === 1) {
+      if (x > b.x && x < b.x + brickWidth && y > b.y && y < b.y + brickHeight) {
+        dy = -dy;
+        b.status = 0;
+        score++;
       }
-    }
-  }
+      if (score == brickRowCount * brickColumnCount) {
+        alert("You win the round with " + score + " points! \n Go again.");
+        document.location.reload();
+      }
+       }
+     }
+   }
+ }
+}
 
 // create the ball
 function drawBall() {
