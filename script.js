@@ -47,10 +47,10 @@ var score2 = 0;
 // 2D array for our bricks
 var bricks = [];
 for (i = 0; i < brickColumnCount; i++) {
-    bricks[i] = [];
-    for (j = 0; j < brickRowCount; j++) {
-        bricks[i][j] = { x: 0, y:0, status: 1 };
-    }
+  bricks[i] = [];
+  for (j = 0; j < brickRowCount; j++) {
+    bricks[i][j] = { x: 0, y:0, status: 1 };
+  }
 }
 
 // listen to the keypresses!
@@ -161,7 +161,7 @@ function draw() {
             }
             else {
             document.location.reload();
-            alert("Too bad! try again.")
+            // alert("Too bad! try again.")
         }
     }
 
